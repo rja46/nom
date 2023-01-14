@@ -1,0 +1,15 @@
+/workspaces/nom/bin/Debug/net7.0/nom
+/workspaces/nom/bin/Debug/net7.0/nom.deps.json
+/workspaces/nom/bin/Debug/net7.0/nom.runtimeconfig.json
+/workspaces/nom/bin/Debug/net7.0/nom.dll
+/workspaces/nom/bin/Debug/net7.0/nom.pdb
+/workspaces/nom/obj/Debug/net7.0/nom.csproj.AssemblyReference.cache
+/workspaces/nom/obj/Debug/net7.0/nom.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/nom/obj/Debug/net7.0/nom.AssemblyInfoInputs.cache
+/workspaces/nom/obj/Debug/net7.0/nom.AssemblyInfo.cs
+/workspaces/nom/obj/Debug/net7.0/nom.csproj.CoreCompileInputs.cache
+/workspaces/nom/obj/Debug/net7.0/nom.dll
+/workspaces/nom/obj/Debug/net7.0/refint/nom.dll
+/workspaces/nom/obj/Debug/net7.0/nom.pdb
+/workspaces/nom/obj/Debug/net7.0/nom.genruntimeconfig.cache
+/workspaces/nom/obj/Debug/net7.0/ref/nom.dll
