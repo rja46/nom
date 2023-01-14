@@ -113,8 +113,15 @@ namespace FoodCS
             Console.WriteLine("\n**********************************");
             Console.WriteLine("*** Details of all households: ***");
             Console.WriteLine("**********************************\n");
+            int counter = 0;
             foreach (var h in households)
             {
+                counter++;
+                if (counter % 20 == 0)
+                {
+                    System.Console.WriteLine("Press Enter...");
+                    Console.ReadLine();
+                }
                 Console.WriteLine(h.GetDetails());
             }
             Console.WriteLine();
@@ -145,6 +152,21 @@ namespace FoodCS
             ySize += extraYSize;
             startNoOfHouseholds += extraHouseholds;
             for (int count = 1; count < extraHouseholds + 1; count++)
+            {
+                AddHousehold();
+            }
+        }
+    }
+
+    class SmallSettlement : Settlement
+    {
+        public SmallSettlement(int newXSize, int newYSize, int newHouseholds)
+            : base()
+        {
+            xSize = newXSize;
+            ySize = newYSize;
+            startNoOfHouseholds = newHouseholds;
+            for (int count = 1; count < startNoOfHouseholds + 1; count++)
             {
                 AddHousehold();
             }
