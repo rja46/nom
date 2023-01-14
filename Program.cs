@@ -65,6 +65,7 @@ namespace FoodCS
 
         public Settlement()
         {
+            //default values
             xSize = 1000;
             ySize = 1000;
             startNoOfHouseholds = 250;
@@ -116,6 +117,7 @@ namespace FoodCS
             int counter = 0;
             foreach (var h in households)
             {
+                //creates pages of 20
                 counter++;
                 if (counter % 20 == 0)
                 {
@@ -132,6 +134,7 @@ namespace FoodCS
             double eatOutRNo = rnd.NextDouble();
             x = households[householdNo].GetX();
             y = households[householdNo].GetY();
+            //eat out if random number is greater than houses value
             if (eatOutRNo < households[householdNo].GetChanceEatOut())
             {
                 return true;
