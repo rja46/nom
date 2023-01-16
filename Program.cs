@@ -169,10 +169,8 @@ namespace FoodCS
             xSize = newXSize;
             ySize = newYSize;
             startNoOfHouseholds = newHouseholds;
-            for (int count = 1; count < startNoOfHouseholds + 1; count++)
-            {
-                AddHousehold();
-            }
+            households = new List<Household>();
+            CreateHouseholds();
         }
     }
 
@@ -874,7 +872,7 @@ namespace FoodCS
     {
         static void Main(string[] args)
         {
-            Settlement s = new Settlement(); 
+            Settlement s = new SmallSettlement(100,100,10);
 
             Console.WriteLine("Households: {0} \nGrid Size: ({1}, {2})",s.GetNumberOfHouseholds(),s.GetXSize(),s.GetYSize()); 
 
