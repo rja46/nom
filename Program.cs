@@ -174,12 +174,14 @@ namespace FoodCS_Settlement_And_Household
 
         static void Main(string[] args)
         {
+            int thisX = 0;
+            int thisY = 0;
             Settlement s = new SmallSettlement(100,100,20);
             for (int i = 0; i < 100; i++)
             {
                 for (int j = 0; j < s.GetNumberOfHouseholds(); j++)
                 {
-                    
+                    s.FindOutIfHouseholdEatsOut(j,ref thisX,ref thisY);
                 }
             }
             Console.WriteLine("Households: {0} \nGrid Size: ({1}, {2})",s.GetNumberOfHouseholds(),s.GetXSize(),s.GetYSize());
