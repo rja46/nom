@@ -56,13 +56,21 @@ namespace FoodCS_Settlement_And_Household
         private static Random rnd = new Random();
         protected int startNoOfHouseholds, xSize, ySize;
         protected List<Household> households = new List<Household>();
-
+        protected bool[,] FreeSpace;
         public Settlement()
         {
             xSize = 1000;
             ySize = 1000;
             startNoOfHouseholds = 250;
             CreateHouseholds();
+            FreeSpace = new bool[xSize,ySize];
+            for (int i = 0; i < xSize;i++)
+            {
+                for (int j = 0; j < ySize;j++)
+                {
+                    FreeSpace[i,j] = false;
+                }
+            }
         }
 
         public int GetNumberOfHouseholds()
@@ -82,8 +90,12 @@ namespace FoodCS_Settlement_And_Household
 
         public void GetRandomLocation(ref int x, ref int y)
         {
-            x = Convert.ToInt32(rnd.NextDouble() * xSize);
-            y = Convert.ToInt32(rnd.NextDouble() * ySize);
+            do
+            {
+                x = Convert.ToInt32(rnd.NextDouble() * xSize);
+                y = Convert.ToInt32(rnd.NextDouble() * ySize);
+            }
+            while (FreeSpace[x,y] == true);
         }
 
         public void CreateHouseholds()
@@ -100,6 +112,7 @@ namespace FoodCS_Settlement_And_Household
             GetRandomLocation(ref x, ref y);
             Household temp = new Household(x, y);
             households.Add(temp);
+            FreeSpace[x,y] = true;
         }
 
         public void DisplayHouseholds()
@@ -176,7 +189,7 @@ namespace FoodCS_Settlement_And_Household
         {
             int thisX = 0;
             int thisY = 0;
-            Settlement s = new SmallSettlement(100,100,20);
+            Settlement s = new SmallSettlement(100,100,9000);
             for (int i = 0; i < 100; i++)
             {
                 for (int j = 0; j < s.GetNumberOfHouseholds(); j++)
