@@ -61,9 +61,9 @@ namespace FoodCS_Settlement_And_Household
         {
             xSize = 1000;
             ySize = 1000;
+            FreeSpace = new bool[xSize,ySize];
             startNoOfHouseholds = 250;
             CreateHouseholds();
-            FreeSpace = new bool[xSize,ySize];
             for (int i = 0; i < xSize;i++)
             {
                 for (int j = 0; j < ySize;j++)
